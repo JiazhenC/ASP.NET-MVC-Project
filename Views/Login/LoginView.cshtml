@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "LoginView";
+}
+
+<head>
+    <title>User Login Page</title>
+    <link rel="stylesheet" type="text/css" href="css/loginpagestyle.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <img class="login-bg" src="images/background.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div>
+                    <img src="images/white_brand.png" alt="Dell" style="width:50px;float:left;margin-right:5px;">
+                    <h2>Login</h2>
+                </div>
+                <br>
+                <form action="Login" method="POST">
+                    <div class="form-group">
+                        <label>Your ID</label>
+                        <input type="text" name="Id" placeholder="Enter ID" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="Password" placeholder="Enter Password" class="form-control" required>
+                    </div>
+                    @if (ViewBag.Error != null)
+                    {
+                        <p style='color:red'> @ViewBag.Error </p>
+                    }
+                    <button type="submit" class="btn btn-primary" value="Login">Login</button>
+
+                </form>
+            </div>
+        </div>
+</body>
